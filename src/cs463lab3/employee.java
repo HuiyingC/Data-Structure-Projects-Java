@@ -2,7 +2,7 @@
 //Author: Huiying Chen
 //Last modified data: 5 Sep 2019
 
-package cs463lab;
+package cs463lab3;
 
 import java.util.*;
 

@@ -5,7 +5,7 @@
  * @last modified date: 12 SEP 2019
 */
 
-package cs463lab;
+package cs463lab3;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
