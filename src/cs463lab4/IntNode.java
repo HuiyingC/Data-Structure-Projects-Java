@@ -32,6 +32,7 @@ reference.
 	/**
 	 * get the node value
 	 * @return the node value
+	 * @throws NullPointerException - Indicates that the node is null.
 	 */
 	public int getData() {
 		return data;
@@ -40,6 +41,7 @@ reference.
 	/**
 	 * get the node point reference
 	 * @return the node point reference
+	 * @throws NullPointerException - Indicates that the node is null.
 	 */
 	public IntNode getLink() {
 		return link;
@@ -48,6 +50,7 @@ reference.
 	/**
 	 * set the new node value
 	 * @param newData – the new data to place in this node
+	 * @throws NullPointerException - Indicates that the node is null.
 	 */
 	public void setData(int newData) {
 		data = newData;
@@ -58,6 +61,7 @@ reference.
 	 * @param newLink - a reference to the node that should appear after this node in
 the linked list (or the null reference if there should be no node after
 this node)
+	 * @throws NullPointerException - Indicates that the node is null.
 	 */
 	public void setLink(IntNode newLink) {
 		link = newLink;
@@ -67,11 +71,13 @@ this node)
 	 * A method to get a String for the linked list starting from the node that activates this
 method
 	 * @return a String for the linked list starting from the node that activates this
+	 * @throws NullPointerException - Indicates that the node is null.
 method
 	 */
-	public String toString() {
+	public String toString() {	
 		String str = String.valueOf(this.data);
 		IntNode cursor;
+		//traverse linked list
 		for (cursor = this.link;cursor != null;cursor = cursor.link) {
 			str = str + "->" + String.valueOf(cursor.data);
 		}
@@ -83,14 +89,10 @@ method
 to this new node.
 	 * @param newdata - data of the new node
 	 * @throws OutOfMemoryError - Indicates that there is insufficient memory for a new IntNode.
+	 * @throws NullPointerException - Indicates that the node is null.
 	 */
 	public void addNodeAfterThis(int newdata) {
-		try {
-			link = new IntNode(newdata, link);
-		}
-		catch(OutOfMemoryError e) {
-			System.out.print("There is insufficient memory for a new IntNode.");
-		}
+		link = new IntNode(newdata, link);
 	}
 	
 	/**
@@ -98,12 +100,11 @@ to this new node.
 	 * @throws NullPointerException - Indicates that this was the tail node of the list, so there is nothing after it to remove.
 	 */
 	public void removeNodeAfterThis() {
-		try {
-			if(link != null) {
-				link = link.link;
-			}
+		//precondition that the node is not the tail node
+		if(link != null) {
+			link = link.link;
 		}
-		finally {
+		else {
 			System.out.println("Cannot remove the tail node");
 		}
 	}
@@ -132,7 +133,9 @@ with a null head)
 	 */
 	public static boolean search(IntNode head, int data) {
 		IntNode cursor;
+		//precondition that the head is not null
 		if(head != null) { 
+			//traverse linked list to check target data
 			for (cursor = head; cursor != null; cursor = cursor.link) {
 				if (data == cursor.data) {
 					System.out.println("Found data in the list");
@@ -142,7 +145,9 @@ with a null head)
 			System.out.println("List does not contain this data");
 			return false;
 		}	
-		System.out.println("The list is empty");
+		else {
+			System.out.println("The head cannot be null");
+		}
 		return false;
 	}
 	
