@@ -19,13 +19,10 @@ public class EmployeeFileOp {
 		   private static Employee[] Employees = new Employee[301];
 		   private static int linenum = 0;
 		   private static String header = "";
-		   public static final String delimiter = ",";
 		   
-		   public static void read(String csvFile) {
-		     
+		   public static void read(String csvFile) {    
 		       int no = 0; 
 		       String line = "";
-				
 			   try {
 		            FileReader fr = new FileReader(csvFile);
 		            BufferedReader br = new BufferedReader(fr);
@@ -38,8 +35,7 @@ public class EmployeeFileOp {
 		            	if(no==0){
 		            		header = line; 
 		            	}else{
-		                	String[] lineStr = line.split(delimiter);
-
+		                	String[] lineStr = line.split(",");
 		                	Employees[no-1] = new Employee();
 		                	Employees[no-1].EmployeeName = lineStr[0]+lineStr[1];
 		                	Employees[no-1].EmployeeNumber = lineStr[2];
@@ -47,9 +43,6 @@ public class EmployeeFileOp {
 		                	Employees[no-1].Zip = lineStr[4];
 		                	Employees[no-1].Age = Integer.parseInt(lineStr[6]);
 		                	Employees[no-1].Sex = lineStr[7];
-		                	//System.out.println("read, no"+(no) +": "+ Employees[no-1].EmployeeName);
-		                	//test
-		                	//System.out.println(no + Employees[no-1].Sex);
 		            	}
 	                	no++;
 		            }
@@ -61,9 +54,7 @@ public class EmployeeFileOp {
 		       }catch(IOException ex) {
 		    	   	System.out.println("Error reading file ");                  
 		       }
-
 			  System.out.println("Finish reading from file, linenum="+linenum);
-
 		   }
 		  
 		 
@@ -71,14 +62,9 @@ public class EmployeeFileOp {
 		   public static void write(String newcsvFile){
 				try {
 					File file = new File(newcsvFile);
-					
 					FileWriter fw = new FileWriter(file.getAbsoluteFile());
-					BufferedWriter bw = new BufferedWriter(fw);
-					
-	                //young_Employees = new young_Employee[Employees.length];
-	                //System.out.println("Employees.length="+Employees.length);
+					BufferedWriter bw = new BufferedWriter(fw); 
 					bw.write("Employee Name,"+"Employee Number,"+"State,"+"Zip,"+"Age,"+"Sex"+"\n");
-					
 					int j=0;
 					for(int i=0;i<Employees.length;i++){
 						//System.out.println("i="+i+":" + Employees[i].EmployeeName+"\t"+Employees[i].EmployeeNumber+"\t"+Employees[i].State+"\t"+Employees[i].Zip+"\t"+Employees[i].Age+"\t"+Employees[i].Sex+"\n");
@@ -92,8 +78,6 @@ public class EmployeeFileOp {
 						}
 						}
 					System.out.println("Number of Employees under 30: "+j);
-					
-						
 					bw.close();
 					fw.close();
 				} catch (IOException e) {

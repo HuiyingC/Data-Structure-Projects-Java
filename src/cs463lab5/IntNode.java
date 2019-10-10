@@ -113,8 +113,7 @@ to this new node.
 	 */
 	public static int listLength(IntNode head) {
 		IntNode cursor;
-		int answer;
-		answer = 0;
+		int answer = 0;
 		for (cursor = head; cursor != null; cursor = cursor.link)
 			answer++;
 		return answer;	
@@ -314,7 +313,6 @@ to this new node.
 		//if the starting node is not null, create a new linked list with reference head
 		reverseHead = new IntNode();
 		//add the rest of the nodes for the newly created reversed linked list
-		//[FIXME]head could be only reference??
 		while (head != null) {	
 			reverseHead.addNodeAfterThis(head.data);
 			head = head.link;
@@ -325,7 +323,7 @@ to this new node.
 	
 	
 	/**
-	 *  A method to test whether a linked list starting from the given head is cyclic or acyclic. The idea is to store head of the linked list and traverse it. If we reach NULL, linked list is acyclic. If reach head again, linked list is cyclic.
+	 * A method to test whether a linked list starting from the given head is cyclic or acyclic. The idea is to store head of the linked list and traverse it. If we reach NULL, linked list is acyclic. If reach head again, linked list is cyclic.
 	 * @param head  – the head reference for a linked list
 	 * @return true if it is cyclic. return false if the list is acyclic or empty
 	 */
@@ -346,6 +344,7 @@ to this new node.
 		//if reach null, acyclic
 		return false;
 	}
+	
 	
 	
 }

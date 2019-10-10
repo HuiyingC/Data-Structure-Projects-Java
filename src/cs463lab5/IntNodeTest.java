@@ -10,6 +10,9 @@ package cs463lab5;
 
 public class IntNodeTest {
 	public static void main(String[] args) {
+
+		
+	
 		//create the test linked list
 		IntNode nodeTest = new IntNode(7,null);
 		nodeTest.addNodeAfterThis(11);
@@ -23,6 +26,13 @@ public class IntNodeTest {
 		//print linked list
 		System.out.println(nodeTest.toString());
 		
+		//removeAllOdd(IntNode head)
+		IntNode.removeAllOdd(nodeTest);
+		System.out.println(nodeTest.toString());
+
+	}
+}
+/*		
 		//test listEvenNumber
 		System.out.println("The even number of the linked list is:" + IntNode.listEvenNumber(nodeTest));
 		
@@ -112,10 +122,9 @@ public class IntNodeTest {
 		if (isCyclic3 == false) {
 			System.out.println("This linked list is acyclic.");
 		}
-				
-			
-		
+	
 		
 	}
 	
 }
+*/	

@@ -1,8 +1,7 @@
-//employee class
+//This is a simple but beautiful program to manipulate employee class
 //Author: Huiying Chen
 //Last modified data: 5 Sep 2019
 
-package cs463lab3;
 
 import java.util.*;
 
@@ -171,8 +170,6 @@ public class employee implements Cloneable {
 	}//end getAllAdvisors method
 	
 	
-
-	
 	
 //main method for testing all methods
 	public static void main(String[] args) {
@@ -273,4 +270,4 @@ public class employee implements Cloneable {
 	
 }//end class	
 
-
+//??how to do simpler test in main
