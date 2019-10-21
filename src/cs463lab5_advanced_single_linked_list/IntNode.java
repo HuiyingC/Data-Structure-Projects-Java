@@ -1,4 +1,4 @@
-package cs463lab5;
+package cs463lab5_advanced_single_linked_list;
 
 /**
  * An IntNode provides a node for a linked list with integer data in each node.

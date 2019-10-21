@@ -1,4 +1,4 @@
-package cs463lab7;
+package cs463lab7_doubly_linked_list;
 
 /******************************************************************************
 * DoublyLinkedListDummy.java

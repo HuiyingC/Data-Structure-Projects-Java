@@ -1,4 +1,4 @@
-package cs463lab4;
+package cs463lab4_single_linked_list;
 
 /**
  * test all the methods in IntNode.java

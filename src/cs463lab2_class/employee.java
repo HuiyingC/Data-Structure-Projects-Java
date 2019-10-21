@@ -1,7 +1,8 @@
-//This is a simple but beautiful program to manipulate employee class
+//program to manipulate employee class
 //Author: Huiying Chen
 //Last modified data: 5 Sep 2019
 
+package cs463lab2_class;
 
 import java.util.*;
 

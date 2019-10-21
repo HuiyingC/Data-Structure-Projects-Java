@@ -1,4 +1,4 @@
-package cs463lab5;
+package cs463lab5_advanced_single_linked_list;
 
 
 /**
@@ -24,10 +24,6 @@ public class IntNodeTest {
 		nodeTest.addNodeAfterThis(2);
 
 		//print linked list
-		System.out.println(nodeTest.toString());
-		
-		//removeAllOdd(IntNode head)
-		IntNode.removeAllOdd(nodeTest);
 		System.out.println(nodeTest.toString());
 
 	}
