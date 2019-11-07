@@ -13,7 +13,7 @@ package cs463lab10_Recursion;
 public class RecursiveQuestion {
 
 	/**
-	 * an algorithm to calculate the kth Fibonacci number F k using binary recursion
+	 * an algorithm to calculate the kth Fibonacci number F_k using binary recursion
 	 * @param k - the kth sequence of Fibonacci number
 	 * @return the kth Fibonacci number
 	 */
@@ -54,33 +54,28 @@ public class RecursiveQuestion {
 	
 	
 	/**
-	 * @param L - the specified recursion depth level
-	 * @param curl - the curl level
-	 * @return a string of an output of call level
+	 * an algorithm to show call level
+	 * @param L - the deepest recursion level
+	 * @param curl - the current recursion depth level
+	 * @return a string shows call level
 	 */
 	public static String showCallLevel(int L, int curl) {
-		String space = ""; String space1 = ""; String space2 = ""; 
-		String output = "";
+		String space = ""; 
 		//base case
-		if (L == 1) {
+		if (curl == L) {
 			for (int i=0;i<curl;i++) {space += " ";}
-			System.out.print(space + "This was written by call number 4x\n");
-			return "This was written by call number 1y\n";
+			return space + "This was written by call number " + curl + "x\n" + space + "This was written by call number " + curl +"y\n";
 		} else{
-			//print upside lines
-			for (int i=0;i<curl;i++) {space1 += " ";}
-			System.out.printf(space1 + "This was written by call number " + curl + "x\n");
-			//recursion calls to get downside lines
-			for (int i=0;i<L;i++) {space2 += " ";}     
-			output = space2 +"This was written by call number " + L + "y\n";;
-			return output + showCallLevel(L-1, curl+1); 
+			//generate two lines, and call recursion between the two lines
+			for (int i=0;i<curl;i++) {space += " ";}
+			return space + "This was written by call number " + curl + "x\n" + showCallLevel(L, curl+1) + space + "This was written by call number " + curl +"y\n"; 
 		}
 		
 	}
 	
 	
 	/**
-	 * prints the value of n as a binary number
+	 * prints the value of n as a binary number.  If n is zero, then a single zero is printed; otherwise, no leading zeros are printed in the output.
 	 * @param n - a non-negative integer number
 	 */
 	public static void BinaryPrint(int n) {
@@ -126,27 +121,49 @@ public class RecursiveQuestion {
             Pattern(n / 2, c + n / 2);
         }
 	}
+	 
 	
-
 	
 	
 	/**
 	 * main
 	 */
 	public static void main(String args[]) { 
-		/*
-		System.out.println(FibBinaryRecursive(0));
-		System.out.println(FibBinaryRecursive(1));
-		System.out.println(FibBinaryRecursive(2));
-		System.out.println(FibBinaryRecursive(3));
-		System.out.println(FibBinaryRecursive(4));
-		System.out.println(FibBinaryRecursive(5));
-		System.out.println(FibBinaryRecursive(6));
-	    */
+		
+		System.out.println("FibBinaryRecursive Test: ");
+		System.out.printf("F_0: %d\n", FibBinaryRecursive(0));
+		System.out.printf("F_1: %d\n", FibBinaryRecursive(1));
+		System.out.printf("F_2: %d\n", FibBinaryRecursive(2));
+		System.out.printf("F_3: %d\n", FibBinaryRecursive(3));
+		System.out.printf("F_4: %d\n", FibBinaryRecursive(4));
+		System.out.printf("F_5: %d\n", FibBinaryRecursive(5));
+		System.out.printf("F_6: %d\n", FibBinaryRecursive(6));
+		System.out.println();
+		
+		System.out.println("showCallLevel(4,1) Test: ");
 		System.out.println(showCallLevel(4,1));
-        //HanoiTower(4, "A", "B", "C"); 
-		//BinaryPrint(4);
-		//Pattern(8, 0);
+		System.out.println();
+		System.out.println("showCallLevel(6,1) Test: ");
+		System.out.println(showCallLevel(6,1));
+		System.out.println();
+		
+		System.out.println("HanoiTower(4, 'A', 'B', 'C') Test: ");
+        HanoiTower(4, "A", "B", "C"); 
+        System.out.println();
+        
+        System.out.println("BinaryPrint Test: ");
+        System.out.print("BinaryPrint(0): ");
+        BinaryPrint(0);
+        System.out.println();
+        System.out.print("BinaryPrint(4): ");
+		BinaryPrint(4);
+		System.out.println();
+        System.out.print("BinaryPrint(27): ");
+		BinaryPrint(27);
+		System.out.println("\n");
+		
+		System.out.println("Pattern(8, 0) Test: ");
+		Pattern(8, 0);
     } 
 	
 	
