@@ -1,0 +1,5 @@
+-Each recursive call either turn to the left subtree or the right subtree
+	 * -Assume base case need constant time k1, Nth recursive call need constant time k2 and one (N-1)th recursive call
+	 * -In the worst case, N = height of BST, where log2(n+1)<=height<=1+log2(n)
+	 * -T(n) = T(n/2) + k2 = ... = k1 + height * k2
+	 * -log2(n+1)*k2 + k1 <= T(n) <= (1+log2(n))*k2 + k1

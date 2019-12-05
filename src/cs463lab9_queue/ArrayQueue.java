@@ -42,6 +42,8 @@ public class ArrayQueue<E> implements MyQueue<E> {
 		}
 		size = 0;
 		data = (E[])new Object[initialCapacity];
+		//front = 0;
+		//rear = 0;
 	}
 	
 	

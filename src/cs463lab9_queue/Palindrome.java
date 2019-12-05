@@ -21,7 +21,7 @@ public class Palindrome {
 	
 	//main
 	public static void main(String[] args) {
-		// Using Scanner for Getting Input from User 
+		/*// Using Scanner for Getting Input from User 
 		System.out.println("Type a string: ");
         Scanner in = new Scanner(System.in); 
         String s = in.nextLine(); 
@@ -32,10 +32,10 @@ public class Palindrome {
 		else {
 			System.out.println("Not a word-by-word palindrome. ");
 		}
-		
-/*		
+		*/
+	
 		System.out.println("Test 1:" );
-		String string1 =  "You can cage a swallow, cann’t you, but, you cann’t swallow a cage, can you \n?";
+		String string1 =  "ou can cage a swallow, cann’t you, but, you cann’t swallow a cage, can you \n?";
 		if (isPalindrome(string1)) {
 			System.out.println("It's a word-by-word palindrome. ");
 		}
@@ -51,7 +51,7 @@ public class Palindrome {
 		else {
 			System.out.println("Not a word-by-word palindrome. ");
 		}
-*/		
+	
 	}	
 	
 	
@@ -79,7 +79,7 @@ public class Palindrome {
 		//traverse two queues at the same time to check whether every element in two queues are equal
 		SNode<String> cursor1, cursor2;
 		for (cursor1=PQueue.front,cursor2=PQueueBwd.front;
-			cursor1!=PQueue.rear&&cursor2!=PQueueBwd.rear;
+			cursor1!=null&&cursor2!=null;
 			cursor1=cursor1.link,cursor2=cursor2.link) {
 			if (cursor1.data.equals(cursor2.data)){
 				continue;
